@@ -46,6 +46,31 @@ def findMaxPages(html):
 
   return pmax
 
+def ShSumm(s):
+	s = s.replace(' ','')
+	s = s.replace('\xa0','')
+	s = s.replace('\t','')
+	s = s.replace('.','')
+	s = s.replace('руб','')
+	
+	if (s[0:2] == 'от'): s = s + '-0'
+
+	s = s.replace('от','')
+	s = s.replace('до','-')
+	
+	if (s[0] == '-'): s = '0' + s
+
+	try:
+		s1, s2 = s.split('-')
+	except Exception:
+		pass
+
+	# if (s == 'null'): 
+		# s1 = '0'
+		# s2 = '0'
+
+	return ([int(s1),int(s2)])
+
 def parsePage(html):
   vacansis = html.findAll('div', {'data-qa':'vacancy-serp__vacancy'})
   for vacansi in vacansis:
@@ -55,8 +80,13 @@ def parsePage(html):
     try:
       compensation = vacansi.find('div',{'data-qa':'vacancy-serp__vacancy-compensation'}).text 
     except Exception:
-      compensation = 'without paying )'
-    print(f"{site};{name};{compensation};{url}")
+      # compensation = 'null'
+      compensation = '0-0'
+    # print(f"{site};{name};{compensation};{url}")
+    sm1, sm2 = ShSumm(compensation)
+    # print (f"{compensation};{sm1};{sm2}")
+    # print(f"{site};{name};{compensation};{sm1};{sm2};{url}")
+    print(f"{site};{name};{sm1};{sm2};{url}")
 
 #  main
 html = loadPage(main_link, params, header)

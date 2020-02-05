@@ -41,6 +41,40 @@ def findMaxPages(html):
         pass
   return pmax
 
+def ShSumm(s):
+  s = s.replace(' ','')
+  s = s.replace('\xa0','')
+  s = s.replace('\t','')
+  s = s.replace('.','')
+  s = s.replace('руб','')
+  s = s.replace('₽','')
+  # s = s.replace('По—говорённости','0—0')
+  
+  
+  if (s[0:2] == 'от'): s = s + '—0'
+
+  s = s.replace('от','')
+  s = s.replace('до','—')
+  
+  if (s[0] == '—'): s = '0' + s
+
+  try:
+    s1, s2 = s.split('—')
+  except Exception:
+    # pass
+    s1 = '0'
+    s2 = '0'
+    # s1 = '$'
+    # s2 = '$'
+
+  if (s1 == 'По'): 
+    s1 = '0'
+    s2 = '0'
+
+  return ([int(s1),int(s2)])
+  # print (s,s1,s2, end =" #")
+  # return ([0,0])
+
 def parsePage(html):
   vacansis = html.findAll('div', {'class':'f-test-vacancy-item'})
   for vacansi in vacansis:
@@ -55,7 +89,9 @@ def parsePage(html):
     except Exception:
       company = 'none'
       companyUrl = 'none'
-    print(f"{site};{name};{compensation};{url};{company};{companyUrl}")
+    # print(f"{site};{name};{compensation};{url};{company};{companyUrl}")
+    sm1, sm2 = ShSumm(compensation)
+    print(f"{site};{name};{sm1};{sm2};{url};{company};{companyUrl}")
   return 0
 
 def latinizator(letter):
