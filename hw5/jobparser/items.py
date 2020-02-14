@@ -8,10 +8,30 @@
 import scrapy
 
 
-class JobparserItem(scrapy.Item):
-    # define the fields for your item here like:
-    _id = scrapy.Field()
-    name = scrapy.Field()
-    salary = scrapy.Field()
+# class JobparserItem(scrapy.Item):
+#     # define the fields for your item here like:
+#     _id = scrapy.Field()
+#     name = scrapy.Field()
+#     salary = scrapy.Field()
 
-    pass
+# class SuperjobItem(scrapy.Item):
+#     _id = scrapy.Field()
+#     script = scrapy.Field()
+
+class HHItem(scrapy.Item):
+    _id = scrapy.Field()
+    title = scrapy.Field()
+    company = scrapy.Field()
+    min_salary = scrapy.Field()
+    max_salary = scrapy.Field()
+    salary = scrapy.Field()
+    currency = scrapy.Field()
+    unit = scrapy.Field()
+    location = scrapy.Field()
+    alt_location = scrapy.Field()
+    link = scrapy.Field()
+
+
+class SuperjobItem(scrapy.Item):
+    _id = scrapy.Field()
+    script = scrapy.Field()

@@ -1,29 +1,38 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.http import HtmlResponse
-from jobparser.items import JobparserItem
+from jobparser.items import HHItem
 # from items import JobparserItem
 
 class HhruSpider(scrapy.Spider):
     name = 'hhru'
+
     allowed_domains = ['hh.ru']
-    start_urls = ['https://izhevsk.hh.ru/search/vacancy?area=&st=searchVacancy&text=python']
+    start_urls = ['https://hh.ru/search/vacancy?area=1&st=searchVacancy&text=%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80&from=suggest_post']
 
     def parse(self, response: HtmlResponse):
         next_page = response.css('a.HH-Pager-Controls-Next::attr(href)').extract_first()
-        yield response.follow(next_page, callback=self.parse)
+        if next_page:
+            yield response.follow(next_page, callback=self.parse)
 
-        vacansy = response.css(
-            'div.vacancy-serp div.vacancy-serp-item div.vacancy-serp-item__row_header a.bloko-link::attr(href)'
-        ).extract()
+        for link in response.xpath('//a[@data-qa="vacancy-serp__vacancy-title"]/@href').extract():
+            yield response.follow(link, callback=self.parse_vacancy)
 
-        for link in vacansy:
-            yield response.follow(link, callback=self.vacansy_parse)
+    @staticmethod
+    def parse_vacancy(response: HtmlResponse):
+        item = {
+          'title': response.xpath('//h1[@class="header"]//text()').extract_first(),
+          'company': response.xpath('//a[@class="vacancy-company-name"]//text()').extract(),
+          'min_salary': response.xpath('//meta[@itemprop="minValue"]/@content').extract_first(),
+          'max_salary': response.xpath('//meta[@itemprop="maxValue"]/@content').extract_first(),
+          'salary':  response.xpath('//script[@type="application/ld+json"]//text()').extract_first(), 
+          'currency': response.xpath('//meta[@itemprop="currency"]/@content').extract_first(),
+          'unit': response.xpath('//meta[@itemprop="unitText"]/@content').extract_first(),
+          'location': response.xpath('//span[@data-qa="vacancy-view-raw-address"]//text()').extract(),
+          'alt_location': response.xpath('//span[@itemprop="jobLocation"]/..//text()').extract(),
+          'link': response.url
+        }
 
-    def vacansy_parse(self, response: HtmlResponse):
-        name = response.css('div.vacancy-title h1.header::text').extract_first()
-        salary = response.css('div.vacancy-title p.vacancy-salary::text').extract()
-        # print(name, salary)
-        yield JobparserItem(name=name,salary=salary)
+        yield HHItem(**item)
 
-
+# //script[@type='application/ld+json']
