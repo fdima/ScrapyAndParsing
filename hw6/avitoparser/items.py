@@ -6,7 +6,8 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-from scrapy.loader.processors import MapCompose, TakeFirst
+import pprint
+from scrapy.loader.processors import MapCompose, TakeFirst, Identity
 
 
 def cleaner_photo(value):
@@ -14,14 +15,10 @@ def cleaner_photo(value):
         return f'http://{value}'
     return value
 
-def get_prop(value):
-	pass
-	return (value)
-
-
 class AvitoparserItem(scrapy.Item):
     _id = scrapy.Field()
     name = scrapy.Field(output_processor=TakeFirst())
     photos = scrapy.Field(input_processor=MapCompose(cleaner_photo))  # // -> http://
-    propv = scrapy.Field(input_processor=MapCompose(get_prop))
-    prop = scrapy.Field(input_processor=MapCompose(get_prop))
+    propv = scrapy.Field()
+    prop = scrapy.Field()
+    propa = scrapy.Field()

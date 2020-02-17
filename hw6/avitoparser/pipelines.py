@@ -29,7 +29,19 @@ class DataBasePipeline(object):
         client = MongoClient('localhost', 27017)
         self.mongo_base = client.avito_photo
 
+    def up_props(self, item):
+      k = item['prop']
+      v = item['propv']
+      s = dict()
+      for index, i in enumerate(k):
+          s[k[index]] = v[index*2+1]
+      del (item['prop'])
+      del (item['propv'])
+      item['prop'] = s
+      return (item)
+
     def process_item(self, item, spider):
         collection = self.mongo_base[spider.name]
-        collection.insert_one(item)
+        i = self.up_props(item)
+        collection.insert_one(i)
         return item

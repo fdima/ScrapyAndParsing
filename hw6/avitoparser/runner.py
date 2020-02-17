@@ -16,3 +16,4 @@ if __name__ == '__main__':
 # os.system("scrapy crawl yourspider")
 # https://vike.io/ru/174496/
 # https://docs.scrapy.org/en/latest/intro/tutorial.html
+# https://coderlessons.com/tutorials/devops/uchitsia-scrapy/scrapy-kratkoe-rukovodstvo
