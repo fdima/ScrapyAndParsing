@@ -1,0 +1,609 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"except"
+			],
+			[
+				"e",
+				"exp_salary"
+			],
+			[
+				"re",
+				"return\tkeyword"
+			],
+			[
+				"extr",
+				"extract_first"
+			],
+			[
+				"al",
+				"allowed_domains"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"ta",
+				"target_url"
+			],
+			[
+				"i",
+				"items"
+			],
+			[
+				"s",
+				"story__topic"
+			],
+			[
+				"tar",
+				"target"
+			],
+			[
+				"target_",
+				"target_date_time"
+			],
+			[
+				"targe",
+				"target_url"
+			],
+			[
+				"met",
+				"meta\tTag"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"fin",
+				"findUrl"
+			],
+			[
+				"close",
+				"closeSession"
+			],
+			[
+				"co",
+				"commit"
+			],
+			[
+				"clo",
+				"closeSession"
+			],
+			[
+				"add",
+				"addinSession"
+			],
+			[
+				"com",
+				"company"
+			],
+			[
+				"pa",
+				"PageMax"
+			],
+			[
+				"main",
+				"main_link"
+			],
+			[
+				"vaca",
+				"vacansis"
+			],
+			[
+				"pe",
+				"parsePage"
+			],
+			[
+				"spa",
+				"spans"
+			],
+			[
+				"text",
+				"getText"
+			],
+			[
+				"__",
+				"__grammar"
+			],
+			[
+				"n",
+				"None"
+			],
+			[
+				"sho",
+				"show_parts"
+			],
+			[
+				"t",
+				"text"
+			],
+			[
+				"foo",
+				"foo4"
+			],
+			[
+				"now",
+				"now_year"
+			],
+			[
+				"my",
+				"my_list_1"
+			],
+			[
+				"my_",
+				"my_list_1"
+			],
+			[
+				"no",
+				"now_split"
+			],
+			[
+				"двадцатое",
+				"двенадцатое"
+			],
+			[
+				"my_s",
+				"my_set_1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "scrapy.cfg",
+			"settings":
+			{
+				"buffer_size": 265,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"LiveReload: Enable/disable plugins",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"livere",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"print (\"d\")",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/fdima/gb-parsing-git/hw6"
+	],
+	"file_history":
+	[
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/runner.py",
+		"/Users/fdima/gb-parsing-git/hw5/scrapy.cfg",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/spiders/sjru.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/spiders/hhru.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/pipelines.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/middlewares.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/items.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/settings.py",
+		"/Users/fdima/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/spiders/__init__.py",
+		"/Users/fdima/gb-parsing-git/hw5/jobparser/__init__.py",
+		"/Users/fdima/py/parse-yandeх-card.py",
+		"/Users/fdima/landing1/yandex-search.json",
+		"/Users/fdima/py/yandex-data/data_file_yandex_sber_москва.json",
+		"/Users/fdima/py/data_file_yandex_sber1.json",
+		"/Users/fdima/GB/parsing/lesson5/url",
+		"/Users/fdima/py/data_file_yandex.json",
+		"/Users/fdima/py/yandex-sam.json",
+		"/Users/fdima/gb-parsing-git/hw4/main.py",
+		"/Users/fdima/gb-parsing-git/hw4/SQL.py",
+		"/Users/fdima/gb-parsing-git/hw3/parse-suprejob.py",
+		"/Users/fdima/Library/Application Support/Sublime Text 3/Packages/LiveReload/LiveReload.sublime-settings",
+		"/Users/fdima/ru-vds",
+		"/Users/fdima/gb-parsing-git/hw3/SQL.py",
+		"/Users/fdima/gb-parsing-git/hw3/parse-hh.py",
+		"/Users/fdima/gb-parsing-git/hw3/parse-hh-suprejob.py",
+		"/Users/fdima/gb-parsing-git/hw2/parse-hh.py",
+		"/Users/fdima/gb-parsing-git/hw2/parse-hh-suprejob.py",
+		"/Users/fdima/gb-parsing-git/hw2/parse-super.py",
+		"/Users/fdima/GB/parsing/lesson3/url",
+		"/Users/fdima/gb-parsing-git/hw2/text.html",
+		"/Users/fdima/gb-parsing-git/hw1/vk-api-text.py",
+		"/Users/fdima/gb-parsing-git/hw1/vk-api-get-friends.py",
+		"/Users/fdima/GB/parsing/lesson2/Kinopoisk.py",
+		"/Users/fdima/GB/parsing/lesson2/1.py",
+		"/Users/fdima/GB/parsing/lesson1/Main (1).py",
+		"/Users/fdima/py/GB/oop-game/game.py",
+		"/Users/fdima/py/GB/second/oop-third.py",
+		"/Users/fdima/py/GB/oop-f1.py",
+		"/Users/fdima/py/excel-mongodb/+19-12/inv1.json",
+		"/Users/fdima/py/excel-mongodb/+19-12/from-ex-inv1.py",
+		"/Applications/MAMP/htdocs/terd-old/index.php",
+		"/Users/fdima/py/GB/iata.py",
+		"/Users/fdima/py/GB/second/oop-second.py",
+		"/Users/fdima/py/GB/oop-first-bp.py",
+		"/Users/fdima/py/GB/oop-first.py",
+		"/Users/fdima/py/second.py",
+		"/Users/fdima/py/GB/oop-f1-text1.py",
+		"/Users/fdima/py/xml.py",
+		"/Users/fdima/py/GB/GB/data-utf.txt",
+		"/Users/fdima/Library/Application Support/Sublime Text 3/Packages/User/python3.sublime-build",
+		"/Users/fdima/first-git/index.php",
+		"/Users/fdima/py/second"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "scrapy.cfg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 69.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/python3.sublime-build",
+	"project": "hw6.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 214.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
