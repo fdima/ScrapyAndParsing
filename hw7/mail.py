@@ -12,15 +12,12 @@ from datetime import datetime, timedelta
 import time
 import re
 
-URL = 'https://account.mail.ru/login'
 CREDENTIALS = {
     'Login': 'study.ai_172',
     'Password': 'NewPassword172'
 }
-MONTHES = ['января', 'февраля', 'марта',
-           'апреля', 'мая', 'июня',
-           'июля', 'августа', 'сентября',
-           'октября', 'ноября', 'декабря']
+
+MONTHES = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
 def parse_date(date):
     if date.startswith('Сегодня') or date.startswith('Вчера'):
@@ -83,11 +80,10 @@ def add_new_email_urls(add_all=False):
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()
-    print('Заходим на страницу ввода логина/пароля')
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(URL)
+    driver.get('https://account.mail.ru/login')
 
     '''Вводим логин и пароль'''
     for cred in CREDENTIALS:
@@ -100,10 +96,9 @@ if __name__ == '__main__':
         element.send_keys(CREDENTIALS[cred])
         element.send_keys(Keys.RETURN)
 
-    '''В этом списке будем хранить ссылки на письма'''
     email_urls = []
 
-    print('Ждем появления строк с письмами...')
+    print('Waiting emails ...')
     emails = Wait(driver, 10).until(
         EC.visibility_of_all_elements_located((
             By.CLASS_NAME, 'js-letter-list-item'

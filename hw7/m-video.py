@@ -33,7 +33,6 @@ class DB:
                     'discount': self.get_attr(good, 'c-pdp-price__discount'),
                     'trade-price': self.get_attr(good, 'c-pdp-price__trade-price'),
                     'monthly': self.get_attr(good, 'c-pdp-price__monthly')
-
                 }
 
                 self.db['hits'].update_one({'_id': item['_id']},
