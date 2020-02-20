@@ -17,47 +17,47 @@ CREDENTIALS = {
     'Password': 'NewPassword172'
 }
 
-MONTHES = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
-def parse_date(date):
-    if date.startswith('Сегодня') or date.startswith('Вчера'):
-        if date.startswith('Сегодня'):
-            pattern = 'Сегодня'
-            d = datetime.now()
-        else:
-            pattern = 'Вчера'
-            d = datetime.now() - timedelta(1)
-        day = d.day
-        month = MONTHES[d.month - 1]
-        return date.replace(pattern, f'{d.day} {month}')
-    return date
-
-def parse_sender(sender):
-    re_search = re.search(r'<(.+)>$', sender)
-    return re_search.group(1)
-
-
-'''Класс Mongo'''
 class DB:
     def __init__(self):
         client = MongoClient('localhost', 27017)
         self.db = client.mailru
 
+    def parse_sender(self, sender):
+        re_search = re.search(r'<(.+)>$', sender)
+        return re_search.group(1)
+
+    def parse_date(self, date):
+
+        MONTHES = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+
+        if date.startswith('Сегодня') or date.startswith('Вчера'):
+            if date.startswith('Сегодня'):
+                pattern = 'Сегодня'
+                d = datetime.now()
+            else:
+                pattern = 'Вчера'
+                d = datetime.now() - timedelta(1)
+            day = d.day
+            month = MONTHES[d.month - 1]
+
+            return date.replace(pattern, f'{d.day} {month}')
+
+        return date
+
     def insert_data(self, email):
         content = email.find_element_by_class_name('llc__content')
         item = {
-            'sender': content.find_element_by_class_name('ll-crpt').get_attribute('title'),
+            'sender': self.parse_sender(content.find_element_by_class_name('ll-crpt').get_attribute('title')),
             'title': content.find_element_by_class_name('ll-sj__normal').text,
             'snippet': content.find_element_by_class_name('ll-sp__normal').text,
-            'date': content.find_element_by_class_name('llc__item_date').get_attribute('title')
+            'date': self.parse_date(content.find_element_by_class_name('llc__item_date').get_attribute('title'))
         }
-        item['sender'] = parse_sender(item['sender'])
-        item['date'] = parse_date(item['date'])
-        item['_id'] = sha1((str(item['date']) + item['sender'] + item['title']).encode('utf-8')).hexdigest()
+
+        item['_id'] = sha1((item['sender'] + item['title'] + str(item['date'])).encode('utf-8')).hexdigest()
         self.db['emails'].update_one({'_id': item['_id']},
                                      {'$set': item},
                                      upsert=True)
-
 
 def add_new_email_urls(add_all=False):
     if add_all:
@@ -65,7 +65,7 @@ def add_new_email_urls(add_all=False):
             href = email.get_attribute('href')
             email_urls.append(href)
             db.insert_data(email)
-        print(f'Добавлено писем: {len(emails)}')
+        print(f'Insert emails : {len(emails)}')
     else:
         last_added_email_num = len(emails) - 1
         current_url = emails[last_added_email_num].get_attribute('href')
@@ -76,7 +76,7 @@ def add_new_email_urls(add_all=False):
             href = emails[i].get_attribute('href')
             email_urls.append(href)
             db.insert_data(emails[i])
-        print(f'Добавлено писем: {len(emails) - last_added_email_num - 1}')
+        print(f'Insert emails: {len(emails) - last_added_email_num - 1}')
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     driver = webdriver.Chrome(options=chrome_options)
     driver.get('https://account.mail.ru/login')
 
-    '''Вводим логин и пароль'''
+    # 'Вводим логин и пароль'
     for cred in CREDENTIALS:
         element = Wait(driver, 10).until(
             EC.visibility_of_element_located((
@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
     db = DB()
 
-    print('Начинаем добавлять письма...')
+    # print('добавляем письма...')
     add_new_email_urls(add_all=True)
     for i in range(3):
         ActionChains(driver).move_to_element(emails[-1]).perform()
@@ -120,11 +120,10 @@ if __name__ == '__main__':
     prev_btm_url = new_btm_url
     new_btm_url = emails[-1].get_attribute('href')
 
-    '''Скроллим пока самое нижнее письмо после прокрутки не совпадет с самым нижним письмом до прокрутки.
-    Это будет означать, что мы прокрутили до конца.'''
+    # пока самое нижнее письмо не совпадет с самым нижним письмом до и после прокрутки.
+
     while new_btm_url != prev_btm_url:
-        '''Скроллим с помощью перемещения к последнему письму на текущий момент, 
-        чтобы появились новые'''
+        # перемещаемся к последнему письму
         add_new_email_urls()
         for i in range(3):
             ActionChains(driver).move_to_element(emails[-1]).perform()
@@ -136,8 +135,5 @@ if __name__ == '__main__':
         prev_btm_url = new_btm_url
         new_btm_url = emails[-1].get_attribute('href')
 
-    '''Теперь у нас есть все ссылки на письма. 
-    Можно также пройтись и собрать подробную информацию, заходя в каждое письмо.'''
-    print(f'Всего писем добавлено: {len(email_urls)}')
-    print('Конец')
+    print(f'Insert all : {len(email_urls)}')
     driver.quit()
